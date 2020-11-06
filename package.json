@@ -1,0 +1,32 @@
+{
+  "name": "controle-de-academia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm-run-all -p nodemon browsersync",
+    "nodemon": "nodemon server.js",
+    "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefferson29rodrigues/backend-launchbase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefferson29rodrigues/backend-launchbase/issues"
+  },
+  "homepage": "https://github.com/jefferson29rodrigues/backend-launchbase#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.12",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
