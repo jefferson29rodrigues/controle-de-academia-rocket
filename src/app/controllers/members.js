@@ -1,6 +1,3 @@
-const { age, date, desde, birthday } = require('../utils')
-
-
 const { age, date, desde, birthday } = require('../../lib/utils')
 
 module.exports = {
