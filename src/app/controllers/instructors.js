@@ -1,4 +1,5 @@
 const { age, date, desde } = require('../../lib/utils')
+const db = require('../../config/db')
 
 module.exports = {
     index(req, res){
@@ -33,7 +34,20 @@ module.exports = {
             RETURNING id
         `
 
-        return
+        const values = [
+            req.body.name,
+            req.body.avatar_url,
+            req.body.gender,
+            req.body.services,
+            date(req.body.birth).iso,
+            date(Date.now()).iso
+        ]
+
+        db.query(query, values, function(err, results) {
+            console.log(err)
+            console.log(results)
+            return
+        })
 
     },
 
