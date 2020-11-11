@@ -45,7 +45,13 @@ module.exports = {
     },
 
     edit(req, res){
-        return
+        Instructor.find(req.params.id, function(instructor) {
+            if (!instructor) return res.send("Instructor not found!")
+
+            instructor.birth = date(instructor.birth).iso
+
+            return res.render("instructors/edit", { instructor })
+        })
     },
 
     put(req, res){
@@ -58,7 +64,9 @@ module.exports = {
             }
         }
 
-        return
+        Instructor.update(req.body, function() {
+            return res.redirect(`/instructors/${req.body.id}`)
+        })
     },
 
     delete(req, res){
