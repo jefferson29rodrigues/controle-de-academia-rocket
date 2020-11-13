@@ -59,9 +59,9 @@ module.exports = {
                 name=($2),
                 birth=($3),
                 gender=($4),
-                email=($5)
-                blood=($6)
-                weight=($7)
+                email=($5),
+                blood=($6),
+                weight=($7),
                 height=($8)
             WHERE id = $9
         `
