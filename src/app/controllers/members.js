@@ -52,7 +52,12 @@ module.exports = {
 
             member.birth = date(member.birth).iso
 
-            return res.render("members/edit", { member })
+            Member.instructorsSelectOptions(function(options) {
+                console.log(options[5])
+    
+                return res.render('members/edit', { member, instructorOptions: options })
+            })
+
         })
     },
 
