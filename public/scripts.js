@@ -20,7 +20,7 @@ for (item of menuItems) {
 // selectedPage = 15
 // [1, ..., 13, 14, 15, 16, 17, ..., 20]
 
-function paginate(totalPages, selectedPage) {
+function paginate(selectedPage, totalPages) {
     let pages = [],
         oldPage
 
