@@ -54,4 +54,14 @@ const page = +pagination.dataset.page;
 const total = +pagination.dataset.total;
 const pages = paginate(page, total)
 
-console.log(pages)
+let elements = ""
+
+for (let page of pages) {
+    if (String(page).includes("...")) {
+        elements += `<span>${pages}</span>`
+    } else {
+        elements += `<a href="?page=${page}">${pages}</a>`
+    }
+}
+
+pagination.innerHTML = elements
